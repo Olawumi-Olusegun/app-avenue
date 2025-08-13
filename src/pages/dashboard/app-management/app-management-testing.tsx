@@ -2,10 +2,18 @@ import { ArrowUp, Search } from "lucide-react"
 import AppSubLinks from "./app-sublinks"
 import BetaTestingTable from "./_components/beta-testing-table"
 import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import CreateBetaTestingTable from "@/components/modals/app-management/create-beta-testing-table"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const AppManagementTesting = () => {
     return (
+        <>
+          <DashboardHeader>
+            <div className="flex items-center gap-1">
+             <img src="/assets/images/bifrost_logo.png" alt="bifrost" />
+             <h1 className="font-bold">Bifrost</h1>
+            </div>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5">
             <AppSubLinks />
             <section className="w-full my-2">
@@ -47,13 +55,12 @@ const AppManagementTesting = () => {
                         <Input className="pl-8 text-white/80 placeholder:text-white/70" placeholder="Search" />
                         <Search size={18} className="absolute top-1/2 -translate-y-1/2 left-2 text-white/70" />
                     </div>
-                    <Button className="bg-amber-500 hover:bg-amber-600 text-black w-full lg:w-fit">
-                        <span className="text-sm">Create New Beta Test</span>
-                    </Button>
+                  <CreateBetaTestingTable />
                 </div>
                 <BetaTestingTable />
             </section>
         </div>
+        </>
     )
 }
 

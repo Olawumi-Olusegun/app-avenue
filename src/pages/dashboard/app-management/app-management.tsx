@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button"
+import SubmitAppForm from "@/components/modals/app-management/submit-app-form"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import { Link } from "react-router-dom"
@@ -6,15 +7,16 @@ import { Link } from "react-router-dom"
 const AppManagement = () => {
     return (
         <>
+           <DashboardHeader>
+             <h1 className="font-bold">App Management</h1>
+           </DashboardHeader>
             <div className="flex flex-col gap-5 w-full">
                 <section className="w-full flex items-center justify-between -mb-6 py-6">
                     <div className="relative">
                         <Input className="pl-8 text-white/80 bg-primary-500 border-primary-700 placeholder:text-white/70" placeholder="Search" />
                         <Search size={18} className="absolute top-1/2 -translate-y-1/2 left-2 text-white/70" />
                     </div>
-                    <Button className="bg-amber-500 hover:bg-amber-600 text-black">
-                        <span className="text-sm">Submit New App</span>
-                    </Button>
+                    <SubmitAppForm/>
                 </section>
                 <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
                     <Link to={"/app-management/overview"} className="flex flex-col items-center justify-between gap-2 h-[200px] p-4 rounded-2xl hover:bg-primary-900 transition-colors duration-300 bg-gradient-to-b from-[#212529] to-[#635AF34D] border border-gray-700 overflow-hidden">

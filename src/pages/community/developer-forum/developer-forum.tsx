@@ -1,9 +1,16 @@
+import DeveloperForumForm from "@/components/modals/community/developer-forum-form"
+import CustomPagination from "@/components/shared/CustomPagination"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 
 const DeveloperForum = () => {
     return (
+        <>
+              <DashboardHeader>
+             <h1 className="font-bold">Developer Forum</h1>
+           </DashboardHeader>
         <div className="w-full">
             <section className="w-full relative px-6 rounded-md overflow-hidden mt-6 bg-[url('/assets/images/featured-suggestion-hero-bg.png')] bg-cover bg-center bg-no-repeat h-[237px] flex items-center">
                 <div className="flex flex-col gap-4 w-full mt-20 z-10 lg:max-w-[500px]">
@@ -19,7 +26,7 @@ const DeveloperForum = () => {
             <section className="w-full mt-6 flex flex-col gap-4">
                 <div className="w-full flex flex-wrap items-center justify-between">
                     <h2 className="font-semibold">Popular Discussions</h2>
-                    <Button className="bg-amber-500 hover:bg-amber-600 text-black">Start New Discussion</Button>
+                    <DeveloperForumForm />
                 </div>
                 <div className="flex items-center gap-2">
                     <div className="size-10 rounded-full overflow-hidden self-start">
@@ -107,11 +114,10 @@ const DeveloperForum = () => {
                     </div>
                 </div>
             </section>
-            <div className="h-px w-full bg-primary-500 my-6" />
-            <div className="flex items-center justify-end h-5 w-full">
-                <span className="font-bold">Pagination</span>
-            </div>
+            <div className="h-px w-full bg-primary-500 mt-6" />
+            <CustomPagination />
         </div>
+        </>
     )
 }
 

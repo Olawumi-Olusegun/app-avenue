@@ -42,7 +42,7 @@ const invoices = [
 
 const MonetizationSubscriptionTable = () => {
     return (
-        <ScrollArea className="w-full text-white/80">
+        <ScrollArea className="w-full text-white">
             <Table>
                 <TableHeader className="bg-primary-700">
                     <TableRow className="border-b-gray-600 hover:bg-primary-700 divide-x divide-gray-600">

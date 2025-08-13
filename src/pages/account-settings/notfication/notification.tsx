@@ -1,11 +1,16 @@
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import DashboardHeader from "@/components/shared/DashboardHeader";
 
 
 const Notification = () => {
 
 
     return (
+        <>
+          <DashboardHeader>
+             <h1 className="font-bold">Notifications</h1>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5">
             <section className="w-full my-2">
                 <div className="w-full grid grid-cols-12 gap-2 border-b border-b-gray-600 py-4">
@@ -42,6 +47,7 @@ const Notification = () => {
                 </div>
             </section>
         </div>
+        </>
     )
 }
 

@@ -3,6 +3,7 @@ import AppSubLinks from "./app-sublinks"
 import { CircleQuestionMark, SquareChevronDown } from "lucide-react"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const invoices = [
     {
@@ -29,8 +30,14 @@ const invoices = [
 
 
 const AppManagementVerification = () => {
-
     return (
+        <>
+          <DashboardHeader>
+            <div className="flex items-center gap-1">
+             <img src="/assets/images/bifrost_logo.png" alt="bifrost" />
+             <h1 className="font-bold">Bifrost</h1>
+            </div>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5">
             <AppSubLinks />
             <section className="w-full flex flex-col bg-primary-500 rounded-md border border-gray-800 overflow-hidden">
@@ -124,6 +131,7 @@ const AppManagementVerification = () => {
 
             </section>
         </div>
+        </>
     )
 }
 

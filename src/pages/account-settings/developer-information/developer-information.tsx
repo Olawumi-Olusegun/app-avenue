@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import DashboardHeader from "@/components/shared/DashboardHeader";
 
 const FormSchema = z.object({
     first_name: z.string().min(2, { message: "Firstname is required" }),
@@ -50,6 +51,10 @@ const DeveloperInformation = () => {
 
 
     return (
+        <>
+          <DashboardHeader>
+             <h1 className="font-bold">Developer Information</h1>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5">
             <section className="w-full my-2">
                 <Form {...form}>
@@ -273,6 +278,7 @@ const DeveloperInformation = () => {
                 </Form>
             </section>
         </div>
+        </>
     )
 }
 

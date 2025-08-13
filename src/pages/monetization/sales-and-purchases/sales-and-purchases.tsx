@@ -3,9 +3,15 @@ import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import AppPurchaseHistoryTable from "./_components/app-purchase-history-table"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
+import CustomPagination from "@/components/shared/CustomPagination"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const SalesAndPurchases = () => {
     return (
+        <>
+          <DashboardHeader>
+             <h1 className="font-bold">Sales & Purchases</h1>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-6 mt-6">
             <section className="w-full flex items-center flex-wrap gap-3">
                 <Button className="bg-primary-600 text-primary-300 hover:bg-primary-300 hover:text-white">App Purchases</Button>
@@ -54,11 +60,10 @@ const SalesAndPurchases = () => {
                     </div>
                 </div>
                 <AppPurchaseHistoryTable />
-                <div className="flex items-center justify-end w-full">
-                    <span className="font-bold py-5 px-2">Pagination</span>
-                </div>
+                <CustomPagination />
             </section>
         </div>
+        </>
     )
 }
 

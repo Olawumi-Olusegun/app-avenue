@@ -9,6 +9,7 @@ import z from "zod";
 import AppSubLinks from "./app-sublinks";
 import { Plus } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import DashboardHeader from "@/components/shared/DashboardHeader";
 
 const FormSchema = z.object({
     app_name: z.string().min(2, { message: "Firstname is required" }),
@@ -50,6 +51,13 @@ const AppManagementOverview = () => {
     const submit = (formValues: z.infer<typeof FormSchema>) => console.log(formValues);
 
     return (
+        <>
+         <DashboardHeader>
+            <div className="flex items-center gap-1">
+             <img src="/assets/images/bifrost_logo.png" alt="bifrost" />
+             <h1 className="font-bold">Bifrost</h1>
+            </div>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5">
             <AppSubLinks />
             <section className="w-full my-2">
@@ -485,6 +493,7 @@ const AppManagementOverview = () => {
                 </Form>
             </section>
         </div>
+        </>
     )
 }
 

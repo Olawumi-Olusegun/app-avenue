@@ -2,9 +2,17 @@ import AppSubLinks from "./app-sublinks"
 import { Button } from "@/components/ui/button"
 import { Paperclip, Smile } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const AppManagementForum = () => {
     return (
+        <>
+          <DashboardHeader>
+            <div className="flex items-center gap-1">
+             <img src="/assets/images/bifrost_logo.png" alt="bifrost" />
+             <h1 className="font-bold">Bifrost</h1>
+            </div>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5 relative">
             <AppSubLinks />
             <div className="w-full flex flex-col gap-5">
@@ -76,10 +84,10 @@ const AppManagementForum = () => {
                     </div>
                 </div>
             </div>
-            <div className="fixed flex flex-col gap-1 bottom-0 left-3 right-3 lg:left-6 lg:right-6 bg-primary-500 rounded-md lg:ml-[240px]">
+            <div className="fixed flex flex-col gap-1 bottom-0 left-3 right-3 lg:left-6 lg:right-6 bg-primary-500 overflow-hidden rounded-md lg:ml-[240px]">
                 <div className="relative overflow-hidden">
                     <Textarea className="h-[150px] resize-none text-white/80 pb-10 outline-none border-primary-600" placeholder="Type your message..."></Textarea>
-                    <div className="absolute bottom-0 w-[95%] lg:w-[98%] left-0 right-0 bg-primary-500 flex items-center justify-end py-2">
+                    <div className="absolute bottom-0 w-[95%] lg:w-[98%] left-0 right-0 m-1 bg-primary-500 flex items-center justify-end py-2">
                         <Button size={"icon"} className="size-8 bg-transparent text-white px-4 py-2 rounded-md">
                             <Paperclip size={15} />
                         </Button>
@@ -91,6 +99,7 @@ const AppManagementForum = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

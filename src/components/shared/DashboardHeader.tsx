@@ -2,22 +2,15 @@ import { LogOut, Menu, } from "lucide-react"
 import { Button } from "../ui/button"
 import type { ReactNode } from "react"
 
-export const HeaderTagLine = ({ children }: { children: ReactNode }) => {
-    return (
-        <div className="hidden md:flex flex-col gap-2">
-            {children}
-        </div>
-    )
-}
 
-const DashboardHeader = () => {
+
+const DashboardHeader = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="text-white w-full">
-            <div className="flex items-center justify-between border-b border-b-gray-700 pb-4">
-                <HeaderTagLine>
-                    <h1 className="font-bold">Overview</h1>
-                    <p className="text-sm text-white/80">View your team's trades and transactions.</p>
-                </HeaderTagLine>
+                <div className="text-white w-full">
+                    <div className="flex items-center justify-between border-b border-b-gray-700 pb-2">
+                        <div className="hidden lg:flex flex-col gap-2">
+                    {children}
+                </div>
                 <Button variant={"ghost"} size={"icon"} className="lg:hidden size-8 hover:bg-primary-700">
                     <Menu className="text-white/80" />
                 </Button>

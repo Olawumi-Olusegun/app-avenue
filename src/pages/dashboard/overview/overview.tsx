@@ -2,9 +2,14 @@ import { Button } from "@/components/ui/button"
 import { ArrowUp, Phone } from "lucide-react"
 import AppPerformanceTable from "./_components/app-performance-table"
 import BetaTestingTable from "./_components/beta-testing-table"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const Overview = () => {
     return (
+       <>
+       <DashboardHeader>
+            <h1 className="font-bold">Overview</h1>
+       </DashboardHeader>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] -mb-6">
             <article className="w-full flex flex-col gap-5 py-6 lg:pr-6">
                 <Button className="p-5 rounded-md flex items-start h-20 w-full lg:w-[330px] bg-primary-500 hover:bg-primary-500/80">
@@ -71,21 +76,21 @@ const Overview = () => {
                     <div className="w-full py-3 flex flex-col gap-3">
                         <div className="flex items-center gap-2 w-full">
                             <div className="size-8 shrink-0 self-start">
-                                <img src="/assets/images/app-avenue-logo.png" alt="image" className="h-full w-full" />
+                                <img src="/assets/images/quotient.png" alt="image" className="h-full w-full" />
                             </div>
                             <span className="text-xs">Bifrost received a 3-star rating with the comment "Could use more features."</span>
                             <span className="text-xs self-start">now</span>
                         </div>
                         <div className="flex items-center gap-2 w-full">
                             <div className="size-8 shrink-0 self-start">
-                                <img src="/assets/images/app-avenue-logo.png" alt="image" className="h-full w-full" />
+                                <img src="/assets/images/maimail.png" alt="image" className="h-full w-full" />
                             </div>
                             <span className="text-xs">A new version (2.1.0) of Bifrost has been successfully published to the HarmonyOS store.</span>
                             <span className="text-xs self-start">now</span>
                         </div>
                         <div className="flex items-center gap-2 w-full">
                             <div className="size-8 shrink-0 self-start">
-                                <img src="/assets/images/app-avenue-logo.png" alt="image" className="h-full w-full" />
+                                <img src="/assets/images/bifrost_logo.png" alt="image" className="h-full w-full" />
                             </div>
                             <span className="text-xs">A new comment was added to your feature suggestion: "Implement a real-time collaboration tool in the IDE".</span>
                             <span className="text-xs self-start">now</span>
@@ -94,6 +99,7 @@ const Overview = () => {
                 </div>
             </aside>
         </div>
+       </>
     )
 }
 

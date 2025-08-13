@@ -3,9 +3,14 @@ import RevenueChart1 from "./_components/RevenueChart1"
 import RevenueChart2 from "./_components/RevenueChart2"
 import RevenueChart3 from "./_components/RevenueChart3"
 import RevenueChart4 from "./_components/RevenueChart4"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const RevenueOverview = () => {
     return (
+        <>
+         <DashboardHeader>
+             <h1 className="font-bold">Revenue Overview</h1>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5">
             <section className="w-full my-2">
                 <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-3 divide-x divide-gray-600 text-white">
@@ -66,6 +71,7 @@ const RevenueOverview = () => {
                 </div>
             </section>
         </div>
+        </>
     )
 }
 

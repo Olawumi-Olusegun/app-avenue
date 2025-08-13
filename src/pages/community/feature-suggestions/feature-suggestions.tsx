@@ -1,14 +1,18 @@
-import { Button } from "@/components/ui/button"
+import FeatureSuggestionForm from "@/components/modals/community/feature-suggestion-form"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 import { Vote } from "lucide-react"
 
 const FeatureSuggestions = () => {
     return (
         <>
+         <DashboardHeader>
+             <h1 className="font-bold">Featured Suggestions</h1>
+           </DashboardHeader>
             <section className="w-full relative rounded-md overflow-hidden my-6 bg-[url('/assets/images/featured-suggestion-hero-bg.png')] bg-cover bg-center bg-no-repeat h-[237px] flex items-center justify-center">
                 <div className="flex flex-col gap-2 w-full p-5 z-10">
                     <h1 className="text-white font-semibold text-2xl">Welcome to AppAvenue Developer Forum</h1>
                     <p className="text-white/80 text-sm">Have a great idea to make AppAvenue Developer better?</p>
-                    <Button className="w-fit mt-4 p-5 rounded-md bg-amber-500 hover:bg-amber-600 text-black">Suggest a New Feature</Button>
+                    <FeatureSuggestionForm />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-black from-50% to-transparent"></div>
             </section>

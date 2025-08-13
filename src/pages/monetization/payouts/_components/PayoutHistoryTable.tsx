@@ -1,3 +1,4 @@
+
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
     Table,
@@ -44,6 +45,7 @@ const invoices = [
 
 const PayoutHistoryTable = () => {
     return (
+        <>
         <ScrollArea>
             <Table>
                 <TableHeader className="bg-primary-700">
@@ -67,6 +69,8 @@ const PayoutHistoryTable = () => {
             </Table>
             <ScrollBar orientation="horizontal" />
         </ScrollArea>
+       
+        </>
     )
 }
 

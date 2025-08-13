@@ -1,11 +1,20 @@
 import { Button } from "@/components/ui/button"
-import { ArrowUp, Flag, Star } from "lucide-react"
+import { ArrowUp, Flag, Search, Star } from "lucide-react"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 import AppSubLinks from "./app-sublinks"
+import { Input } from "@/components/ui/input"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const AppManagementReviewsAndRatings = () => {
     return (
+        <>
+          <DashboardHeader>
+            <div className="flex items-center gap-1">
+             <img src="/assets/images/bifrost_logo.png" alt="bifrost" />
+             <h1 className="font-bold">Bifrost</h1>
+            </div>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5">
             <AppSubLinks />
             <section className="w-full my-2">
@@ -76,9 +85,9 @@ const AppManagementReviewsAndRatings = () => {
 
             <section className="w-full">
                 <div className="w-full flex flex-col gap-3 lg:flex-row items-center justify-between py-6">
-                    <div className="relative w-full lg:w-fit">
+                    <div className="relative w-full lg:w-[180px]">
                         <Select>
-                            <SelectTrigger className="w-[180px]">
+                            <SelectTrigger className="w-full">
                                 <SelectValue placeholder="Sort By" />
                             </SelectTrigger>
                             <SelectContent>
@@ -89,9 +98,11 @@ const AppManagementReviewsAndRatings = () => {
                             </SelectContent>
                         </Select>
                     </div>
-                    <Button className="bg-amber-500 hover:bg-amber-600 text-black w-full lg:w-fit">
-                        <span className="text-sm">Create New Beta Test</span>
-                    </Button>
+                   
+                     <div className="relative w-full lg:w-sm">
+                        <Input className="pl-8 bg-primary-400 text-white/80 placeholder:text-white/70" placeholder="Search" />
+                        <Search size={18} className="absolute top-1/2 -translate-y-1/2 left-2 text-white/70" />
+                    </div>
                 </div>
             </section>
 
@@ -167,6 +178,7 @@ const AppManagementReviewsAndRatings = () => {
                 </div>
             </section>
         </div>
+        </>
     )
 }
 

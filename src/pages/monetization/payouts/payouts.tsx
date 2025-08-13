@@ -1,11 +1,18 @@
 import { Input } from "@/components/ui/input"
 import { CircleQuestionMark, Search } from "lucide-react"
 import PayoutChart from "./_components/PayoutChart"
-import { Button } from "@/components/ui/button"
 import PayoutHistoryTable from "./_components/PayoutHistoryTable"
+import PayoutWithdrawalForm from "@/components/modals/monetization/payout-withdrawal-form"
+import PayoutPaymentInformation from "@/components/modals/monetization/payout-payment-information"
+import CustomPagination from "@/components/shared/CustomPagination";
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const Payouts = () => {
     return (
+        <>
+          <DashboardHeader>
+             <h1 className="font-bold">Payouts</h1>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-6 mt-6">
             <section className="w-full grid grid-cols-12 gap-5">
                 <div className="col-span-12 lg:col-span-5 flex flex-col gap-3">
@@ -15,8 +22,8 @@ const Payouts = () => {
                         <CircleQuestionMark size={18} />
                     </div>
                     <div className="flex items-center gap-5 mt-auto mb-4">
-                        <Button className="bg-amber-500 text-black hover:bg-amber-600">Withdraw</Button>
-                        <Button className="bg-amber-500 text-black hover:bg-amber-600">Manage Payment Information</Button>
+                        <PayoutWithdrawalForm />
+                       <PayoutPaymentInformation />
                     </div>
                 </div>
                 <div className="col-span-12 lg:col-span-7">
@@ -35,11 +42,11 @@ const Payouts = () => {
                     </div>
                 </div>
                 <PayoutHistoryTable />
-                <div className="flex items-center justify-end w-full">
-                    <span className="font-bold py-5 px-2">Pagination</span>
-                </div>
+               {/* Pagination */}
+                 <CustomPagination />
             </section>
         </div>
+        </>
     )
 }
 

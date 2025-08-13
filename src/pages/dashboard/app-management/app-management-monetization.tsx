@@ -8,6 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import z from "zod"
 import MonetizationInAppProductTable from "./_components/monetization-in-app-product-table"
 import MonetizationSubscriptionTable from "./_components/monetization-subscription-table"
+import CreateSubscriptionForm from "@/components/modals/app-management/create-subscription-form"
+import DashboardHeader from "@/components/shared/DashboardHeader"
 
 const FormSchema = z.object({
     app_name: z.string().min(2, { message: "Firstname is required" }),
@@ -39,6 +41,13 @@ const AppManagementMonetization = () => {
 
 
     return (
+        <>
+          <DashboardHeader>
+            <div className="flex items-center gap-1">
+             <img src="/assets/images/bifrost_logo.png" alt="bifrost" />
+             <h1 className="font-bold">Bifrost</h1>
+            </div>
+           </DashboardHeader>
         <div className="w-full flex flex-col gap-5 my-5">
             <AppSubLinks />
             <section className="w-full my-2">
@@ -139,9 +148,7 @@ const AppManagementMonetization = () => {
                         <Input className="pl-8 text-white/80 placeholder:text-white/70" placeholder="Search" />
                         <Search size={18} className="absolute top-1/2 -translate-y-1/2 left-2 text-white/70" />
                     </div>
-                    <Button className="bg-amber-500 hover:bg-amber-600 text-black w-full lg:w-fit">
-                        <span className="text-sm">Create Subscription</span>
-                    </Button>
+                    <CreateSubscriptionForm />
                 </div>
                 <MonetizationSubscriptionTable />
             </section>
@@ -170,6 +177,7 @@ const AppManagementMonetization = () => {
                 </div>
             </section>
         </div>
+        </>
     )
 }
 
